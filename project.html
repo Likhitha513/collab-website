@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team 17 Project</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .page {
+      display: none;
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    /* Intro Page */
+    .intro-page {
+      background-color: #ffcccb;
+      text-align: center;
+    }
+
+    .intro-page h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .intro-page ul {
+      list-style: none;
+      padding: 0;
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+
+    .intro-page li {
+      margin: 5px 0;
+    }
+
+    .intro-page button {
+      padding: 10px 20px;
+      background-color: #f8a542;
+      color: white;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .intro-page button:hover {
+      background-color: #e8902e;
+    }
+
+    /* Login Page */
+    .login-page {
+      background-color: #d3f9f1;
+      text-align: center;
+    }
+
+    .login-page h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .login-page input {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1.1em;
+    }
+
+    .login-page button {
+      padding: 10px 20px;
+      background-color: #f8a542;
+      color: white;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .login-page button:hover {
+      background-color: #e8902e;
+    }
+
+    /* Survey Form Page */
+    .survey-page {
+      background-color: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .survey-page h1 {
+      margin-bottom: 20px;
+      font-size: 2.5em;
+    }
+
+    .survey-page label {
+      display: block;
+      margin: 10px 0 5px;
+      font-size: 1.1em;
+      text-align: left;
+    }
+
+    .survey-page input,
+    .survey-page select,
+    .survey-page textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1.1em;
+    }
+
+    .survey-page textarea {
+      resize: vertical;
+    }
+
+    .survey-page button {
+      padding: 12px 24px;
+      background-color: #f8a542;
+      color: white;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .survey-page button:hover {
+      background-color: #e8902e;
+    }
+
+    .survey-page .back-button {
+      margin-top: 20px;
+      background-color: #e1e1e1;
+    }
+
+    .survey-page .back-button:hover {
+      background-color: #ccc;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Starting Page -->
+  <div class="page intro-page" id="introPage">
+    <h1>Welcome to Team 17's Project</h1>
+    <p>This is our project, created by:</p>
+    <ul>
+      <li>23B91A4719</li>
+      <li>23B91A4725</li>
+      <li>23B91A4702</li>
+      <li>23B91A4769</li>
+    </ul>
+    <button onclick="showLoginPage()">Next</button>
+  </div>
+
+  <!-- Login Page -->
+  <div class="page login-page" id="loginPage">
+    <h1>Login</h1>
+    <form>
+      <input type="text" id="username" placeholder="Username" required><br>
+      <input type="email" id="email" placeholder="Email" required><br>
+      <input type="password" id="password" placeholder="Password" required><br>
+      <button type="button" onclick="showSurveyPage()">Next<br></button>
+    </form>
+    <button onclick="showIntroPage()">Back</button>
+  </div>
+
+  <!-- Survey Form Page -->
+  <div class="page survey-page" id="surveyPage">
+    <h1>Survey Form</h1>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Enter Name" required>
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" placeholder="Enter E-Mail" required>
+
+      <label for="experience">Work Experience:</label>
+      <input type="number" id="experience" placeholder="Enter Number" required>
+
+      <label for="invest">Are you comfortable investing without investigation?</label>
+      <select id="invest" required>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+
+      <label for="suggestions">Suggestions to build a trusted platform:</label>
+      <textarea id="suggestions" rows="3" placeholder="Your suggestions"></textarea>
+
+      <label>You are ready to invest in:</label>
+      <input type="checkbox" id="real-estate">Real Estate<br>
+      <input type="checkbox" id="mutual-funds">Mutual Funds<br>
+      <input type="checkbox" id="crypto-currency">Crypto Currency<br>
+      <input type="checkbox" id="stocks">Stocks & Bonds<br>
+
+
+
+      <button type="submit">Submit</button>
+    </form>
+    <button class="back-button" onclick="showLoginPage()">Back</button>
+  </div>
+
+  <script>
+    // Initially show the intro page
+    showIntroPage();
+
+    function showIntroPage() {
+      // Hide all pages
+      hideAllPages();
+      // Show intro page
+      document.getElementById("introPage").style.display = "block";
+    }
+
+    function showLoginPage() {
+      // Hide all pages
+      hideAllPages();
+      // Show login page
+      document.getElementById("loginPage").style.display = "block";
+    }
+
+    function showSurveyPage() {
+      // Hide all pages
+      hideAllPages();
+      // Show survey page
+      document.getElementById("surveyPage").style.display = "block";
+    }
+
+    function hideAllPages() {
+      // Hide all pages by default
+      const pages = document.querySelectorAll(".page");
+      pages.forEach(page => {
+        page.style.display = "none";
+      });
+    }
+  </script>
+
+</body>
+
+</html>
